@@ -25,6 +25,7 @@ public class DownloadServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String filename = req.getParameter("name");
+        System.out.println();
         //!!!!!!!!!!!!!!!!!!!!这不是普通的文件拷贝，而是通知浏览器去下载，因此，需要设置contenttype
         String minetype = this.getServletContext().getMimeType(filename);
         resp.setContentType(minetype);
